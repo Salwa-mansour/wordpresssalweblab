@@ -8,8 +8,10 @@
  */
 
 ?>
-<section id="articles">
-	<article id="post-<?php the_ID(); ?>" <?php post_class('home-article-box'); ?>>
+
+	<?php $classes = array('home-article-box'); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+	<!-- <article id="post-<?php the_ID(); ?>" <?php //post_class(['home-article-box' ,'drop-on-scroll']); ?>> -->
 
 		<?php salwaweblab_post_thumbnail(); ?>
 		<header class="entry-header">
@@ -22,9 +24,3 @@
 
 
 	</article><!-- #post-<?php the_ID(); ?> -->
-</section>
-<!--#articles-->
-<a href="#">read more</a>
-<section id="contact-me">
-
-</section>

@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+	<section id="articles">
 		<?php
 		if ( have_posts() ) :
 
@@ -48,7 +48,12 @@ get_header();
 
 		endif;
 		?>
+</section>
+<!--#articles-->
+<a href="#">read more</a>
+<section id="contact-me">
 
+</section>
 	</main><!-- #main -->
 
 <?php

@@ -127,6 +127,7 @@ pre {
  */
 a {
 	background-color: transparent;
+	text-decoration: none;
 }
 
 /**
@@ -533,17 +534,17 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	/* color: #4169e1; */
 }
 
 a:visited {
-	color: #800080;
+	/* color: #800080; */
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	/* color: #191970; */
 }
 
 a:focus {
@@ -1031,6 +1032,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
 }
+
 #page{
     background-color:hsl(212, 77%, 12%) ;
     color: #d1deea;
@@ -1043,7 +1045,7 @@ main{
 .rotate.eye{
         display: inline-block;
         color: #FF8C28;
-        /* animation: rotate-eye 2s infinite linear; */
+        animation: rotate-eye 2s infinite linear;
         height:14px;
         
         text-align: center;
@@ -1061,9 +1063,10 @@ main{
         transform: rotate(360deg);
       }
 }
-.site-title{
+.dev-name a{
     display: flex;
     gap: 2px;
+	color: #d1deea;
 }
 /* .rotate-letter{
     outline: 1px solid red;
@@ -1071,12 +1074,12 @@ main{
 .rotate-letter{
     display: inline-block;
     color: #FF8C28;
-    /* animation: rotate-letter .5s .2s ease-in; */
+    animation: rotate-letter .5s .75s cubic-bezier(0.48,-0.24, 1, 1);
 }
 .rotate-letter:hover{
     display: inline-block;
     color: #d1deea;
-    /* animation: rotate-letter-2 .5s ease-in-out; */
+    animation: rotate-letter-2 .5s ease-in-out;
 }
 
 @keyframes rotate-letter{
@@ -1125,7 +1128,6 @@ main{
 .header-info section{
     outline: 1px solid red;
     height: 100%;
-    /* flex-basis: 50%; */
 }
 #primary-menu{
     display: none;
@@ -1150,25 +1152,43 @@ main{
     flex-direction: column;
     align-items: center;
 }
-
+.no-opacity{
+	visibility:hidden;
+}
 .home-article-box{
     max-width:37.5rem ;
-    /* border: 1.5rem solid; */
-    /* border-color:#00318C ; */
     background-color:hsl(212, 77%, 12%) ;
     border-radius: 3px;
     box-shadow: inset 2px 2px 50px black;
-    /* transform:; */
-    margin-bottom: 1.5rem;
+    margin: 1rem 0;
     transition: transform .5s ease-in-out;
-    transform: translate3d(-100%,-200%,0)  scale(.2)  rotate(-5deg);
-   will-change: transform , position;
-    position: absolute;
-    z-index: 10;
-    /* top:80; */
+	position:relative;
+	transform: translate3d(0,0,0)  scale(1) rotate(0deg);
 }
-#articles:hover .home-article-box{
-    transform: translate3d(0,0,0)  scale(1);
-   
-    position:relative;
+
+/* #articles:hover .home-article-box */
+.home-article-box.drop-on-scroll
+{
+	animation: box-little-rotate .5s  cubic-bezier(0.4, 0.86, 0.23, 0.93);
+  
+}
+@keyframes box-little-rotate {
+	0%{
+		opacity: 10%;
+		transform: translate3d(-100%,-200%,0)  scale(.2)  ;
+	}
+	0%{
+		opacity:30%;
+		transform: translate3d(-100%,-200%,0)  scale(.4)  ;
+	}
+	90%{
+		transform:translate3d(0,1rem,0) scale(.6) rotate(-5deg);
+		opacity: 90%;
+	}
+	100%{
+		transform: translate3d(0,0,0)  scale(1) rotate(0deg);
+		opacity: 100%;
+	}
+	
+	
 }
