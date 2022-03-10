@@ -4,7 +4,11 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+( 
+	
+	function() {
+		
+	
 	const siteNavigation = document.getElementById( 'site-navigation' );
 
 	// Return early if the navigation doesn't exist.
@@ -47,6 +51,10 @@
 		const isClickInside = siteNavigation.contains( event.target );
 
 		if ( ! isClickInside ) {
+			
+			page.classList.remove('page-rotate');
+			htmlPage.classList.remove('scroll-disapple');
+			toggleBtn.classList.remove('visible-menu');
 			siteNavigation.classList.remove( 'toggled' );
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
@@ -96,4 +104,25 @@
 			menuItem.classList.toggle( 'focus' );
 		}
 	}
+	  // ----------------menu toggle animation-----------------
+	  https://codepen.io/marco_fugaro/embed/yNGJXE?height=600&default-tab=result&embed-version=2
+	  const htmlPage = document.querySelector('body');
+	  const page = document.querySelector('.site');
+	  const toggleBtn = document.querySelector('.menu-toggle');
+	  const mainMenu = document.querySelector('.main-navigation');
+  
+	  function menuRotate() {
+		  if (mainMenu.classList.contains('toggled')) {
+			  page.classList.add('page-rotate');
+			  htmlPage.classList.add('scroll-disapple');
+			  toggleBtn.classList.add('visible-menu');
+		  }else{
+			  page.classList.remove('page-rotate');
+			  htmlPage.classList.remove('scroll-disapple');
+			  toggleBtn.classList.remove('visible-menu');
+		  }
+	  }
+	  toggleBtn.addEventListener('click', menuRotate);
+	  //   page.addEventListener('click',menuRotate);
+	// /////////////////////////////////
 }() );

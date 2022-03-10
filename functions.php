@@ -149,7 +149,10 @@ function salwaweblab_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'salwaweblab_scripts' );
-
+function ww_load_dashicons(){
+	wp_enqueue_style('dashicons');
+ }
+ add_action('wp_enqueue_scripts', 'ww_load_dashicons', 999);
 /**
  * Implement the Custom Header feature.
  */

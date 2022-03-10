@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-
+ <div id="scroll-progress"></div>
 	<main id="primary" class="site-main">
 	<section id="articles">
 		<?php

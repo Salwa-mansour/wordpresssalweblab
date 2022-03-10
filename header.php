@@ -21,24 +21,36 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="top-back"></div>
+<nav id="site-navigation" class="main-navigation">
+			<a href="#top-back"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="dashicons dashicons-menu-alt"></span></button></a>
+			<?php
+			// wp_nav_menu(
+			// 	array(
+			// 		'theme_location' => 'menu-1',
+			// 		'menu_id'        => 'primary-menu',
+			// 	)
+			// );
+			?>
+			<ul class="primary-menu">
+				<li class="menu-item"><a href="#"> about me</a></li>
+				<li class="menu-item"><a href="#"> my work</a></li>
+				<li class="menu-item"><a href="#"> my skills</a></li>
+				<li class="menu-item"><a href="#"> contacat me</a></li>
+				
+			</ul>
+		</nav><!-- #site-navigation -->
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'salwaweblab' ); ?></a> -->
 
 	<header id="masthead" class="site-header">
 	<div class="nav-container">
-	<h1 class="site-icon">(^_<span class="rotate eye">*</span> );</h1>
-	<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+		<a href="<?php echo esc_url( home_url( '/' ) );?>">
+		<h1 class="site-icon">(^_<span class="rotate eye"><?php esc_html_e('*') ?></span> );</h1>
+	</a>
+	
+	
     </div>
             <!--nav-container-->
 	<div class="header-info">
