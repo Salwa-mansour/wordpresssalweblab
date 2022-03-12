@@ -142,7 +142,8 @@ function salwaweblab_scripts() {
 	wp_style_add_data( 'salwaweblab-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'salwaweblab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'salwaweblab-scroll', get_template_directory_uri() . '/js/scroll.js', array(), _S_VERSION, true );
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'salwaweblab-scroll', get_template_directory_uri() . '/js/scroll.js', 'jQuery', _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
