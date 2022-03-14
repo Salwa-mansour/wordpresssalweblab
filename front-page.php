@@ -14,17 +14,21 @@
 
 get_header();
 ?>
- <div id="scroll-progress"></div>
-	<main id="primary" class="site-main">
+
+<main id="primary" class="site-main">
 	<section id="articles">
-		<?php
+
+		<h1 class="section-title">my works (＠＾▽＾＠);</h1>
+		<div class="inner-flex">
+
+			<?php
 		if ( have_posts() ) :
 
 			
 				?>
-		
-				
-				<?php
+
+
+			<?php
 	
 
 			/* Start the Loop */
@@ -48,13 +52,23 @@ get_header();
 
 		endif;
 		?>
-</section>
-<!--#articles-->
-<a href="#">read more</a>
-<section id="contact-me">
+		</div>
+		<!--inner-flex-->
 
-</section>
-	</main><!-- #main -->
+	</section>
+	<!--#articles-->
+	<a href="#">read more</a>
+	<section id="contact-me">
+		<h1 class="section-title">contact me (*^^*);</h1>
+		<p>Have a question or want to work together?</p>
+		<form action="">
+			name
+			email
+			massge
+			botton
+		</form>
+	</section>
+</main><!-- #main -->
 
 <?php
 // get_sidebar();
