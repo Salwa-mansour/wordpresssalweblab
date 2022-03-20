@@ -61,12 +61,7 @@ get_header();
 	<section id="contact-me">
 		<h1 class="section-title">contact me (*^^*);</h1>
 		<p>Have a question or want to work together?</p>
-		<form action="">
-			name
-			email
-			massge
-			botton
-		</form>
+	<?php	get_template_part( 'template-parts/content', 'contact' ); ?>
 	</section>
 </main><!-- #main -->
 

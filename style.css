@@ -563,10 +563,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: #d1deea;
 	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.8);
+	color: #d1deea;
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 }
@@ -575,7 +575,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	border-color: #d1deea;
 }
 
 button:active,
@@ -586,7 +586,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	border-color:#ff8c28;
 }
 
 input[type="text"],
@@ -605,8 +605,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
+	color: #d1deea;
+	border: 1px solid #d1deea;
 	border-radius: 3px;
 	padding: 3px;
 }
@@ -627,11 +627,11 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	border-color:#ff8c28 ;
 }
 
 select {
-	border: 1px solid #ccc;
+	border: 1px solid #d1deea;
 }
 
 textarea {
@@ -1235,6 +1235,7 @@ main{
 	margin: auto;
 	width: fit-content;
 }
+
 .title-slide-in
 /* .section-title:hover */
 {
@@ -1387,4 +1388,42 @@ main{
 	.header-info{
 		flex-wrap: wrap;
 	}
+}
+/* contact from---------------------------- */
+section#contact-me{
+	text-align: center;
+	max-width:500px ;
+	margin: auto;
+	padding: 0 .5rem;
+}
+#respond input,
+#respond textarea{
+	margin: 1rem 0;
+	font-size: calc(12px + (14 - 10) * ((100vw - 300px) / (1200 - 300)));
+	background-color: rgba(0, 0, 0, 0.5);
+	color:#d1deea;
+	border: 2px solid#d1deea;
+	padding:.5rem .75rem;
+}
+#respond input:focus,
+#respond textarea:focus{
+	border-color: #FF8C28;
+}
+#respond form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content:space-around; */
+	
+}
+#respond form input[type="submit"]{
+	max-width: fit-content;
+	
+}
+#respond form input[type="text"]{
+	width: 100%;
+}
+#respond form textarea{
+	flex-basis: 100% ;
+	min-height: 8rem;
 }
