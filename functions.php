@@ -192,3 +192,66 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// ---------------ajax form----------------
+function massege_sending(){
+    $GLOBALS['$response'] = "";
+ 
+    //function to generate response
+    function my_contact_form_generate_response($type, $message){
+   
+    //  $GLOBALS['$response'];
+   
+      if($type == "success") $GLOBALS['$response'] = "<div class='contact-message success'>{$message}</div>";
+      else $GLOBALS['$response'] = "<div class='contact-message error'>{$message}</div>";
+      echo($GLOBALS['$response']);
+      // echo('masswge funtcion firaed _');
+     
+    }
+  
+      //response messages
+ 
+      $missing_content = "Please fill in empty fields.";
+      $email_invalid   = "Email Address Invalid.";
+      $message_unsent  = "Message was not sent. Try Again.";
+      $message_sent    = "Thanks! Your message has been sent.";
+      
+      //user posted variables
+      $name = $_POST['message_name'];
+      $email = $_POST['message_email'];
+      $message = $_POST['message_text'];
+      // $human = $_POST['message_human'];
+      
+      //php mailer variables
+      $to = get_option('admin_email');
+      $subject = "Someone sent a message from ".get_bloginfo('name');
+      $headers = 'From: '. $email . "\r\n" .
+      'Reply-To: ' . $email . "\r\n";
+// --------------------------------------------------------------  
+            //validate presence of name and message
+            if(empty($name) || empty($message)){
+                my_contact_form_generate_response("error", $missing_content);
+                // echo('empty');
+            }
+            else //ready to go!
+            {
+                        //send email
+                        //validate email
+                    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+                    my_contact_form_generate_response("error", $email_invalid);
+                    else //email is valid
+                    {
+                    //validate presence of name and message
+                    //send email
+                        $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+                        if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
+                        else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+                    }
+
+            }
+            // --------------
+          
+
+  }
+
+ add_action( 'wp_ajax_contactform_action', 'massege_sending' );
+add_action( 'wp_ajax_nopriv_contactform_action', 'massege_sending' );
