@@ -142,6 +142,17 @@ function salwaweblab_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'contactform1', 'salwaweblab' ),
+			'id'            => 'contact1-widget',
+			'description'   => esc_html__( 'contact form short code acconts', 'salwaweblab' ),
+			'before_widget' => '<div id="%1$s" class="widget-contact %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="section-title contact-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'salwaweblab_widgets_init' );
 
@@ -155,6 +166,7 @@ function salwaweblab_scripts() {
 	wp_enqueue_script( 'salwaweblab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'salwaweblab-scroll', get_template_directory_uri() . '/js/scroll.js', 'jQuery', _S_VERSION, true );
+	wp_enqueue_script( 'salwaweblab-send-form-ajax', get_template_directory_uri() . '/js/ajax-form.js', 'jQuery', _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

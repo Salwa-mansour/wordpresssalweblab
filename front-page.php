@@ -58,11 +58,12 @@ get_header();
 	</section>
 	<!--#articles-->
 	<a href="#">read more</a>
-	<section id="contact-me">
+	<?php dynamic_sidebar( 'contact1-widget' ); ?>
+	<!-- <section id="contact-me">
 		<h1 class="section-title">contact me (*^^*);</h1>
 		<p>Have a question or want to work together?</p>
-	<?php	get_template_part( 'template-parts/content', 'contact' ); ?>
-	</section>
+	<?php	//get_template_part( 'template-parts/content', 'contact' ); ?>
+	</section> -->
 </main><!-- #main -->
 
 <?php
