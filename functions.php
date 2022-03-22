@@ -142,6 +142,7 @@ function salwaweblab_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'contactform1', 'salwaweblab' ),

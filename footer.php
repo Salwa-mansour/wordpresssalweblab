@@ -12,16 +12,19 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<section>
-				the social section
-			</section>
-		
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'salwaweblab' ), 'salwaweblab', '<a href="https://github.com/Salwa-mansour">salwa</a>' );
-				?>
-		</div><!-- .site-info -->
+		 <div class="site-info">
+			
+				<div class="copy-rights">
+					<?php
+						/* translators: 1: Theme name, 2: Theme author. */
+						printf( esc_html__( 'Theme: %1$s by %2$s.', 'salwaweblab' ), 'salwaweblab', '<a href="https://github.com/Salwa-mansour">salwa</a>' );
+						?>
+			
+				</div>
+				
+				<?php dynamic_sidebar( 'social-widget' ); ?>
+			
+		</div><!--git.site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
