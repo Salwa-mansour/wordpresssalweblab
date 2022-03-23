@@ -1199,7 +1199,7 @@ main{
 }
 .header-info .side-contact .contact-link::after{
 	
-	content: "(◕‿◕);";
+	/* content: "(◕‿◕);"; */
 }
 .site-description{
 	text-indent: .5rem;
@@ -1316,7 +1316,7 @@ main{
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100%;
+	height: 100vh;
 	z-index: 0;
   }
   .main-navigation.toggled ul.primary-menu li{
@@ -1364,11 +1364,16 @@ main{
 	  right: unset;
 	  left: 0;
   }
-  .scroll-disapple{
-	overflow-x: hidden;
+
+/* html, */
+.scroll-disapple{
+overflow-x: hidden;
 	overflow-y: hidden;
-	scroll-margin: 0;
+	width: 100%;
+	height: 100%;
+	
 }
+
 .page-rotate{
 	transform:translateX(5%) rotate(10deg);
 }

@@ -85,7 +85,7 @@
 					<?php endif; ?>
 				</section><!-- .site-branding -->
 				<section class="side-contact">
-					<a href="#" class="contact-link">hire me </a><!-- (✯◡✯); -->
+					<a href="#" class="contact-link">hire me (◕‿◕);</a><!-- (✯◡✯); -->
 				<?php dynamic_sidebar( 'social-widget' ); ?>
 				</section>
 			</div>
