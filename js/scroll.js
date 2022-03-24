@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var rotatedReverce2 = document.querySelector('.wpcf7 input[type="email"] ');
 
     // rotatedTitle.forEach(function (element) {
-        rotatedTitle.classList.add('inial-rotate');
-        rotatedTitle2.classList.add('inial-rotate');
-        rotatedTitle3.classList.add('inial-rotate');
-        rotatedTitle4.classList.add('inial-rotate');
-        rotatedReverce1.classList.add('inial-rotate-reverce');
-        rotatedReverce2.classList.add('inial-rotate-reverce');
+    rotatedTitle.classList.add('inial-rotate');
+    rotatedTitle2.classList.add('inial-rotate');
+    rotatedTitle3.classList.add('inial-rotate');
+    rotatedTitle4.classList.add('inial-rotate');
+    rotatedReverce1.classList.add('inial-rotate-reverce');
+    rotatedReverce2.classList.add('inial-rotate-reverce');
 
     // })
     // greating animation-------------
@@ -95,49 +95,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // -----------------------------
 
-    function scrolltextrotate(elemnt,topInPixels) {
+    function scrolltextrotate(elemnt, topInPixels) {
         // this funcion is rotating text in seemless motion with scroll 
         const textToRotate = document.querySelector(elemnt);
-        var widowHight = document.documentElement.clientHeight;//screen highet
-        const scrollTop =textToRotate.getBoundingClientRect();//top position accourding to the viewport damintions
-            
-    //  console.log(textToRotate.style.transform)
-        if (scrollTop.top > topInPixels ) {
+        var widowHight = document.documentElement.clientHeight; //screen highet
+        const scrollTop = textToRotate.getBoundingClientRect(); //top position accourding to the viewport damintions
+
+        //  console.log(textToRotate.style.transform)
+        if (scrollTop.top > topInPixels) {
             // 1
             textToRotate.style.transform = `translateX(${250-(1-scrollTop.top / widowHight) *250}px) rotate(${(scrollTop.top /widowHight) *15}deg)`;
             // console.log(`translateX(${250-(1-scrollTop.top / widowHight) *250}px)`)
             textToRotate.style.opacity = `${20+(1-scrollTop.top / widowHight) *80}%`;
-           
+
 
         } else {
             // 1
             textToRotate.style.transform = `translateX(0) rotate(0deg)`;
             textToRotate.style.opacity = `100%`;
-        //    console.log('hme')
+            //    console.log('hme')
         }
     }
     // ---------------------------
-    function scrolltextrotateReverce(elemnt,topINPixels) {
+    function scrolltextrotateReverce(elemnt, topINPixels) {
         // this funcion is rotating text in seemless motion with scroll 
         const textToRotate = document.querySelector(elemnt);
-        var widowHight = document.documentElement.clientHeight;//screen highet
-        const scrollTop =textToRotate.getBoundingClientRect();//top position accourding to the viewport damintions
-            
-    //  console.log(scrollTop.top)
-        if (scrollTop.top > topINPixels ) {
+        var widowHight = document.documentElement.clientHeight; //screen highet
+        const scrollTop = textToRotate.getBoundingClientRect(); //top position accourding to the viewport damintions
+
+        //  console.log(scrollTop.top)
+        if (scrollTop.top > topINPixels) {
             // 1
             textToRotate.style.transform = `translateX(${-250+(1-scrollTop.top / widowHight) *250}px) rotate(${360-((scrollTop.top /widowHight) *15)}deg)`;
             // console.log( `rotate(${(scrollTop.top /widowHight) *15}deg)`)
             // textToRotate.style.transform = `translateX(${80+(1-scrollTop.top / widowHight) *20}%)`;
-           
+
 
         } else {
             // 1
             textToRotate.style.transform = `rotate(360deg)`;
             // textToRotate.style.opacity = `100%`;
-           
+
         }
     }
+
     // ---------------------------
     function scrollProgressF() {
         // progress bar
@@ -154,14 +155,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // eyeRotate.style.transform = `rotate(${(scrollTop / height) *360}deg)`;
         // console.log(`rotate(${(scrollTop / height) *360}deg)`);
         // -----------------------------------------------
-        scrolltextrotate('.section-title',200);
-        scrolltextrotate('.widget-contact h2',200);
-        scrolltextrotateReverce('.widget-contact p',300);
-        scrolltextrotate('.wpcf7 input[type="text"]',400);
-        scrolltextrotateReverce('.wpcf7 input[type="email"]',550);
-        scrolltextrotate('.wpcf7-textarea',600);
-       
-   
+        scrolltextrotate('.section-title', 200);
+        scrolltextrotate('.widget-contact h2', 200);
+        scrolltextrotateReverce('.widget-contact p', 300);
+        scrolltextrotate('.wpcf7 input[type="text"]', 400);
+        scrolltextrotateReverce('.wpcf7 input[type="email"]', 550);
+        scrolltextrotate('.wpcf7-textarea', 600);
+        //  ----------------------
+
+
     }
 
 
@@ -170,27 +172,32 @@ document.addEventListener('DOMContentLoaded', function () {
     // addEventListener('scroll',scrolltextrotate);
     // scroll2(scrollProgressF);
     // -----------------------skill borgress circle animation-----------------
-    function onScroolMove2(elemntInveiw, targetedCalss, animationClass, removableClass, topAndBottom, windowHighetRate) {
-        // Detect request animation frame;
-        var elementInveiw = document.querySelector(elemntInveiw);
-        const targetedElemnt =document.querySelector(targetedCalss);
-        console.log(targetedElemnt)
+    function onScroolprogress(elemntInveiwClass, animationClass) {
+        var elementsToShow = document.querySelectorAll(elemntInveiwClass);
+
         function loop() {
 
-          
-                if (isElementInViewport(elementInveiw)) {
-                    targetedElemnt.classList.add(animationClass);
-                    targetedElemnt.classList.remove(removableClass);
-                    // console.log('add class');
+            Array.prototype.forEach.call(elementsToShow, function (element) {
+                if (isElementInViewport(element)) {
+                    // element.classList.add(animationClass);
+                    if(element.classList.contains('html')||element.classList.contains('css')){
+                        element.style.animation='conic-change90 .5s linear .3s 1 normal forwards';
+                    }else if(element.classList.contains('javascript')){
+                        element.style.animation='conic-change50 .5s linear .3s 1 normal forwards';
+                    }else if(element.classList.contains('wordpress')){
+                        element.style.animation='conic-change80 .5s linear .3s 1 normal forwards';
+                    }
+                    // --
                 } else {
-                    targetedElemnt.classList.remove(animationClass);
-                    targetedElemnt.classList.add(removableClass);
-                    // console.log('remove class');
-                
-            }
+                    element.style.animation='unset';
+                }
+            });
 
             scroll(loop);
         }
+
+        // Call the loop for the first time
+        loop();
 
         // Helper function from: http://stackoverflow.com/a/7557433/274826
         function isElementInViewport(el) {
@@ -199,20 +206,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 el = el[0];
             }
             var rect = el.getBoundingClientRect();
-            // console.log(rect)
             return (
-                (rect.top >= topAndBottom &&
-                    rect.bottom <= topAndBottom) ||
-                (rect.bottom <= (window.innerHeight / windowHighetRate || document.documentElement.clientHeight / windowHighetRate) &&
-                    rect.top >= (window.innerHeight / windowHighetRate || document.documentElement.clientHeight / windowHighetRate)) ||
-                (rect.top <= topAndBottom &&
-                    rect.bottom >= (window.innerHeight / windowHighetRate || document.documentElement.clientHeight / windowHighetRate))
+                (rect.top <= 0 &&
+                    rect.bottom >= 0) ||
+                (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
+                (rect.top >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
             );
         }
-        // make every thing work
-        loop();
-
     }
-    onScroolMove2('.html', '.html', 'inview', 'noh', 100, 6)
+    onScroolprogress('.borgress-circle', 'inview')
     // ----------- end ------------------
 });

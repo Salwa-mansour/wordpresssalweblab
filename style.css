@@ -1156,8 +1156,9 @@ main {
 	justify-content: space-between;
 	/* padding: 5vw 3vw; */
 	align-items: center;
-	height: 80vh;
+	/* height: 80vh; */
 	margin-bottom: 2rem;
+	flex-wrap: wrap;
 	position: relative;
 }
 
@@ -1219,9 +1220,10 @@ main {
 	transition: all .1s ease-in-out;
 }
 
-.header-info .side-contact .contact-link::after {
+.header-info  {
 
-	/* content: "(◕‿◕);"; */
+
+	/* outline: 1px solid red; */
 }
 
 .site-description {
@@ -1278,7 +1280,44 @@ main {
 .inial-rotate-reverce {
 	transform:translateX(-250px) rotate(345deg);
 }
-
+/* welcoming container seciotn */
+.wellcom{
+flex-basis: 100%;
+position: relative;
+outline: 1px solid red;
+min-height: 8rem;
+text-align: center;
+white-space: nowrap;
+}
+.wellcom img{
+	width: 60px;
+	outline: 1px solid white;
+}
+.wellcom .my-hand{
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: rotate(-10deg);
+}
+.wellcom .your-hand{
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: rotate(10deg);
+}
+.wellcom .shake-hands,
+.meet{
+	position: absolute;
+	/* top: 50%; */
+	left: 50%;
+	bottom: 0;
+	transform: translate3d(-50%,0,0);
+}
+.start-shaking{
+	position:absolute;
+	right: 0;
+	top: -1rem;
+}
 .title-slide-in
 
 /* .section-title:hover */
@@ -1672,8 +1711,7 @@ input:-webkit-autofill {
 }
 /* ------------ skills section----------------------- */
 section.my-skills{
-	min-height: 90vh;
-	outline: 2px solid red;
+	padding: 2rem 0 4rem;
 }
 .my-skills .skill-borgress-circles{
 	padding: 2rem 0;
@@ -1710,28 +1748,112 @@ section.my-skills{
 	line-height: 4;
 	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.8);
 }
-.skill.html.inview .borgress-circle{
-	animation: conic-change .5s linear 0.5s 1 none forwards;
-	background-image: conic-gradient(#FF8C28 324deg,rgba(0,0,0,0.1) 137deg);
-	/* background-image: conic-gradient(#FF8C28 324deg,rgba(0,0,0,0.1) 137deg); */
+.skill .borgress-circle.html.inview{
+	/* javascript used to change the property emedatly instead */
+	animation: conic-change90 .5s linear .5s 1 normal forwards;
 }
-@keyframes conic-change {
+
+
+@keyframes conic-change90 {
 	/* 216 54 */
 	0% {
 		background-image: conic-gradient(#FF8C28 144deg,rgba(0,0,0,0.1) 137deg);
 		
 	}
+	10% {
+		background-image: conic-gradient(#FF8C28 169deg,rgba(0,0,0,0.1) 137deg);
+		
+	}
 
-	25% {
+	20% {
 		background-image: conic-gradient(#FF8C28 198deg,rgba(0,0,0,0.1) 137deg);
 	}
-	50%{
+	30% {
+		background-image: conic-gradient(#FF8C28 222deg,rgba(0,0,0,0.1) 137deg);
+	}
+	40%{
 		background-image: conic-gradient(#FF8C28 252deg,rgba(0,0,0,0.1) 137deg);
 	}
-	75%{
+	50%{
+		background-image: conic-gradient(#FF8C28 277deg,rgba(0,0,0,0.1) 137deg);
+	}
+	70%{
 background-image: conic-gradient(#FF8C28 306deg,rgba(0,0,0,0.1) 137deg);
+	}
+	80%{
+background-image: conic-gradient(#FF8C28 316deg,rgba(0,0,0,0.1) 137deg);
 	}
 	100%{
 		background-image: conic-gradient(#FF8C28 324deg,rgba(0,0,0,0.1) 137deg);
+	}
+}
+/* --------------------------------------- */
+@keyframes conic-change80 {
+	/* 216 54 */
+	0% {
+		background-image: conic-gradient(#FF8C28 144deg,rgba(0,0,0,0.1) 137deg);
+		
+	}
+	10% {
+		background-image: conic-gradient(#FF8C28 160deg,rgba(0,0,0,0.1) 137deg);
+		
+	}
+
+	20% {
+		background-image: conic-gradient(#FF8C28 174deg,rgba(0,0,0,0.1) 137deg);
+	}
+	30% {
+		background-image: conic-gradient(#FF8C28 192deg,rgba(0,0,0,0.1) 137deg);
+	}
+	40%{
+		background-image: conic-gradient(#FF8C28 210deg,rgba(0,0,0,0.1) 137deg);
+	}
+	50%{
+		background-image: conic-gradient(#FF8C28 226deg,rgba(0,0,0,0.1) 137deg);
+	}
+	70%{
+background-image: conic-gradient(#FF8C28 244deg,rgba(0,0,0,0.1) 137deg);
+	}
+	80%{
+background-image: conic-gradient(#FF8C28 260deg,rgba(0,0,0,0.1) 137deg);
+	}
+	
+	100%{
+		background-image: conic-gradient(#FF8C28 288deg,rgba(0,0,0,0.1) 137deg);
+	}
+}
+/* --------------------------------------- */
+@keyframes conic-change50 {
+	/* 216 54 */
+	0% {
+		background-image: conic-gradient(#FF8C28 144deg,rgba(0,0,0,0.1) 137deg);
+		
+	}
+	10% {
+		background-image: conic-gradient(#FF8C28 148deg,rgba(0,0,0,0.1) 137deg);
+		
+	}
+
+	20% {
+		background-image: conic-gradient(#FF8C28 152deg,rgba(0,0,0,0.1) 137deg);
+	}
+	30% {
+		background-image: conic-gradient(#FF8C28 156deg,rgba(0,0,0,0.1) 137deg);
+	}
+	40%{
+		background-image: conic-gradient(#FF8C28 160deg,rgba(0,0,0,0.1) 137deg);
+	}
+	50%{
+		background-image: conic-gradient(#FF8C28 164deg,rgba(0,0,0,0.1) 137deg);
+	}
+	70%{
+background-image: conic-gradient(#FF8C28 168deg,rgba(0,0,0,0.1) 137deg);
+	}
+	80%{
+background-image: conic-gradient(#FF8C28 172deg,rgba(0,0,0,0.1) 137deg);
+	}
+	
+	100%{
+		background-image: conic-gradient(#FF8C28 180deg,rgba(0,0,0,0.1) 137deg);
 	}
 }
