@@ -18,7 +18,7 @@ get_header();
 <main id="primary" class="site-main">
 	<section id="articles">
 
-		<h1 class="section-title">my works (＠＾▽＾＠);</h1>
+		<h1 class="section-title ">my works (＠＾▽＾＠);</h1>
 		<div class="inner-flex">
 
 			<?php
@@ -57,7 +57,47 @@ get_header();
 
 	</section>
 	<!--#articles-->
-	<a href="#">read more</a>
+	<!-- <a href="#">read more</a> -->
+	<section class="my-skills">
+		<h2 class="section-title">my skills ヽ(o^ ^o)ﾉ</h2>
+		<div class="skill-borgress-circles">
+				<div class="skill html">
+					<div class="borgress-circle">
+						<div class="inner-circle"> <span class="skill-persentage">90%</span> </div>
+					</div>
+					<span class="skill-title">html</span>
+				</div>
+				<!--html-->
+
+				<div class="skill css">
+					<div class="borgress-circle">
+						<div class="inner-circle"> <span class="skill-persentage">90%</span> </div>
+					</div>
+					<span class="skill-title">css</span>
+
+				</div>
+				<!--css-->
+
+				<div class="skill javascript">
+					<div class="borgress-circle">
+						<div class="inner-circle"> <span class="skill-persentage">50%</span> </div>
+					</div>
+					<span class="skill-title">javascript</span>
+
+				</div>
+				<!--javascript -->
+
+				<div class="skill wordpress">
+					<div class="borgress-circle">
+						<div class="inner-circle"> <span class="skill-persentage">80%</span> </div>
+					</div>
+					<span class="skill-title">wordpress</span>
+
+				</div>
+				<!--wordpress -->
+			
+		</div><!-- skill-borgress-circles-->
+	</section>
 	<?php dynamic_sidebar( 'contact1-widget' ); ?>
 	<!-- <section id="contact-me">
 		<h1 class="section-title">contact me (*^^*);</h1>
