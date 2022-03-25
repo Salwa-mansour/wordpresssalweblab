@@ -1280,48 +1280,283 @@ main {
 .inial-rotate-reverce {
 	transform:translateX(-250px) rotate(345deg);
 }
-/* welcoming container seciotn */
+/* ---------------welcoming container seciotn---------------------- */
 .wellcom{
+max-width: 700px;
 flex-basis: 100%;
 position: relative;
-outline: 1px solid red;
+/* outline: 1px solid red; */
 min-height: 8rem;
 text-align: center;
 white-space: nowrap;
+
 }
 .wellcom img{
 	width: 60px;
-	outline: 1px solid white;
+	/* outline: 1px solid white; */
 }
 .wellcom .my-hand{
 	position: absolute;
 	left: 0;
 	top: 0;
 	transform: rotate(-10deg);
+	
+}
+.my-hand.salam-animation{
+	animation: my-hand-move .4s ease-in-out .1s 1 normal forwards;
+}
+.my-hand.salam-animation-reverce{
+	animation: my-hand-move-reverce .4s ease-in-out 0s 1 normal forwards;
 }
 .wellcom .your-hand{
 	position: absolute;
 	right: 0;
 	top: 0;
 	transform: rotate(10deg);
+
 }
+.your-hand.salam-animation{
+	animation: your-hand-move .4s ease-in-out .1s 1 normal forwards;
+	/* transform:  translate3d(-100%,-30%,0); */
+}
+.your-hand.salam-animation-reverce{
+	animation: your-hand-move-reverce .4s ease-in-out 0s 1 normal forwards;
+	/* transform:  translate3d(-100%,-30%,0); */
+}
+@keyframes your-hand-move {
+	0%{
+		transform: rotate(-5deg) ;
+		right:0 ;
+		top:0 ;
+
+	}
+	20%{
+		transform: rotate(-10deg) ;
+		right:10% ;
+		top:18% ;
+	}
+	40%{
+		transform: rotate(-10deg) ;
+		right:20% ;
+		top:36% ;
+	}
+	60%{
+		transform: rotate(-10deg) ;
+		right:30% ;
+		top:54% 
+	}
+	80%{
+		transform: rotate(-10deg) ;
+		right:40% ;
+		top:72% 
+	}
+	95%{
+		transform: rotate(-10deg) scale(50%) ;
+	}
+	100%{
+		transform: rotate(-10deg) scale(0);
+	
+		right:45% ;
+		top:60% 
+	}
+	
+}
+@keyframes your-hand-move-reverce {
+	0%{
+		transform: rotate(-5deg) scale(0);
+	
+		right:45% ;
+		top:60% 
+	}
+	20%{
+		transform: rotate(-10deg) scale(50%) ;
+	}
+	40%{
+		transform: rotate(-10deg) ;
+		right:40% ;
+		top:72% 
+	}
+	60%{
+		transform: rotate(-10deg) ;
+		right:30% ;
+		top:54% 
+	}
+	80%{
+		transform: rotate(-10deg) ;
+		right:20% ;
+		top:36% ;
+	}
+	95%{
+		transform: rotate(-10deg) ;
+		right:10% ;
+		top:18% ;
+	}
+	100%{
+		transform: rotate(10deg) ;
+		right:0 ;
+		top:0 ;
+
+	}
+	
+	
+}
+
+@keyframes my-hand-move {
+	0%{
+		transform: rotate(-5deg) ;
+		left:0 ;
+		top:0 ;
+
+	}
+	20%{
+		transform: rotate(-10deg) ;
+		left:10% ;
+		top:18% ;
+	}
+	40%{
+		transform: rotate(-10deg) ;
+		left:20% ;
+		top:36% ;
+	}
+	60%{
+		transform: rotate(-10deg) ;
+		left:30% ;
+		top:54% 
+	}
+	80%{
+		transform: rotate(-10deg) ;
+		left:40% ;
+		top:72% 
+	}
+	95%{
+		transform: rotate(-10deg) scale(50%);
+	}
+	100%{
+		transform: rotate(-10deg) scale(0);
+		opacity: 0;
+		left:45% ;
+		top:60% 
+	}
+	
+}
+@keyframes my-hand-move-reverce {
+	0%{
+		transform: rotate(-10deg) scale(0);
+		opacity: 0;
+		left:45% ;
+		top:60% 
+	}
+	20%{
+		transform: rotate(-10deg) scale(50%);
+	}
+	40%{
+		transform: rotate(-10deg) ;
+		left:40% ;
+		top:72% 
+	}60%{
+		transform: rotate(-10deg) ;
+		left:30% ;
+		top:54% 
+	}
+	
+	80%{
+		transform: rotate(-10deg) ;
+		left:20% ;
+		top:36% ;
+	}
+	95%{
+		transform: rotate(-10deg) ;
+		left:10% ;
+		top:18% ;
+	}
+	
+	100%{
+		transform: rotate(-20deg) ;
+		left:0 ;
+		top:0 ;
+
+	}
+	
+	
+	
+}
+
 .wellcom .shake-hands,
 .meet{
 	position: absolute;
 	/* top: 50%; */
 	left: 50%;
-	bottom: 0;
+	
 	transform: translate3d(-50%,0,0);
+	opacity: 0;
+	z-index: 30;
+	
+}
+.start-shaking span{
+	display: inline;
+	font-size: 1.2rem;
+	font-weight: 700;
+	/* outline: 1px solid red; */
+	position: absolute;
+	right: 0;
+	transform: rotate(5deg);
+	animation: arrow-bounce .5s ease .1s infinite ;
+}
+@keyframes arrow-bounce {
+	0%,100%{
+		font-size: 1.2rem;
+	}
+	20%,80%{
+		font-size: 1.5rem;
+	}
+	
+}
+.meet.salam-animation{
+	animation: show-hold .1s ease-in-out .4s 1 normal forwards;
+	bottom: -2rem;
+}
+.shake-hands.salam-animation{
+	bottom: 0;
+	animation: show-hold .1s ease-in-out .4s 1 normal forwards,
+				shake-hand .4s ease .5s 1 ;
+}
+@keyframes show-hold{
+	0%{
+		opacity: 20%;
+	}
+	50%{
+		opacity: 80%;
+	}
+	100%{
+		opacity: 100%;
+	}
+	
+}
+@keyframes shake-hand{
+	0%,100%{
+		transform: translate3d(-50%,0,0);
+	}
+	20%,80%{
+	
+		transform: translate3d(-50%,-20%,0);
+	}
+	40%,60%{
+	
+		transform: translate3d(-50%,20%,0);
+	}
+	
 }
 .start-shaking{
 	position:absolute;
-	right: 0;
-	top: -1rem;
+	right: 10px;
+	padding-right: 1rem;
+	top: -2rem;
 }
+/* ------------------------------------------------ */
 .title-slide-in
 
 /* .section-title:hover */
-	{
+{
 	transform: translateX(0) skew(0deg, 0deg);
 }
 
