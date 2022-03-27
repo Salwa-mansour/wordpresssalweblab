@@ -98,7 +98,10 @@ get_header();
 			
 		</div><!-- skill-borgress-circles-->
 	</section>
-	<?php dynamic_sidebar( 'contact1-widget' ); ?>
+	<section class="contact-me">
+		<?php dynamic_sidebar( 'contact1-widget' ); ?>
+	</section>
+	
 	<!-- <section id="contact-me">
 		<h1 class="section-title">contact me (*^^*);</h1>
 		<p>Have a question or want to work together?</p>

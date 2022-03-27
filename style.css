@@ -1160,6 +1160,7 @@ main {
 	margin-bottom: 2rem;
 	flex-wrap: wrap;
 	position: relative;
+	align-content: center;
 }
 
 .header-info {
@@ -1742,11 +1743,14 @@ button.menu-toggle .dashicons-menu-alt:before {
 }
 
 /* contact from---------------------------- */
-section#contact-me {
+section.contact-me {
 	text-align: center;
-	max-width: 500px;
+	/* max-width: 500px; */
 	margin: auto;
 	padding: 0 .5rem;
+	overflow-x: hidden;
+	overflow-y: visible;/*not working??*/
+	outline: 1px solid red;
 }
 
 #respond input,

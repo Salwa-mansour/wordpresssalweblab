@@ -162,13 +162,13 @@ document.addEventListener('DOMContentLoaded', function () {
         scrolltextrotateReverce('.wpcf7 input[type="email"]', 550);
         scrolltextrotate('.wpcf7-textarea', 600);
         //  ----------------------
-
+        scroll(scrollProgressF);
 
     }
 
+scrollProgressF();
 
-
-    addEventListener('scroll', scrollProgressF);
+    // addEventListener('scroll', scrollProgressF);
     // addEventListener('scroll',scrolltextrotate);
     // scroll2(scrollProgressF);
     // -----------------------skill borgress circle animation-----------------
