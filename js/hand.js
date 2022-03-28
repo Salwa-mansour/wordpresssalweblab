@@ -25,10 +25,11 @@ function greeting() {
         myHand.classList.add('salam-animation');
         salamHand.classList.add('salam-animation');
         salamText.classList.add('salam-animation');
+     
         // isMoving = 0;
         if (isMoving===1) {
-          
-            arrowPointer.style.animation='unset';
+            arrowPointer.classList.remove('puppy-arrow');
+           
          
         } 
     // salamAnimationInerval = setInterval(function(){window.requestAnimationFrame(salamReset)} ,3000)    
@@ -49,7 +50,8 @@ function greeting() {
         salamText.classList.remove('salam-animation');
         if (isMoving===0) {
         //   console.log('salamReset')
-            arrowPointer.style.animation='arrow-bounce .5s ease .1s infinite';
+            arrowPointer.classList.add('puppy-arrow');
+            
             
         } 
         //    yourHand.classList.remove('salam-animation-reverce');

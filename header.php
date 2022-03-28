@@ -91,7 +91,7 @@
 				<section class="wellcom">
 					<img src="http://localhost:10052/wp-content/uploads/2022/03/myhand4.png" alt="" class="my-hand">
 					<img src="http://localhost:10052/wp-content/uploads/2022/03/shakehand1.png" alt="" class="shake-hands">
-					<span class="start-shaking">click the hand <span>&#8595;</span></span>
+					<span class="start-shaking">click the hand <span class="puppy-arrow">&#8595;</span></span>
 					<img src="http://localhost:10052/wp-content/uploads/2022/03/yourhand.png" alt="" class="your-hand">
 					<span class="meet">nice to meet you(✯◡✯)</span>
 				</section>

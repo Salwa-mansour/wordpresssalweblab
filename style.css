@@ -1501,7 +1501,13 @@ white-space: nowrap;
 	position: absolute;
 	right: 0;
 	transform: rotate(5deg);
-	animation: arrow-bounce .5s ease .1s infinite ;
+
+	
+	/* color: unset; */
+}
+.start-shaking span.puppy-arrow{
+		animation: arrow-bounce .5s ease .1s infinite ;
+		color: #FF8C28;
 }
 @keyframes arrow-bounce {
 	0%,100%{
