@@ -1306,7 +1306,7 @@ white-space: nowrap;
 .my-hand.salam-animation{
 	animation: my-hand-move .4s ease-in-out .1s 1 normal forwards;
 }
-.my-hand.salam-animation-reverce{
+.my-hand.salam-animation-reset{
 	animation: my-hand-move-reverce .4s ease-in-out 0s 1 normal forwards;
 }
 .wellcom .your-hand{
@@ -1320,7 +1320,7 @@ white-space: nowrap;
 	animation: your-hand-move .4s ease-in-out .1s 1 normal forwards;
 	/* transform:  translate3d(-100%,-30%,0); */
 }
-.your-hand.salam-animation-reverce{
+.your-hand.salam-animation-reset{
 	animation: your-hand-move-reverce .4s ease-in-out 0s 1 normal forwards;
 	/* transform:  translate3d(-100%,-30%,0); */
 }
