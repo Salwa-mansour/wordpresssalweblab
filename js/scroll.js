@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var rotatedReverce2 = document.querySelector('.wpcf7 input[type="email"] ');
 
     // rotatedTitle.forEach(function (element) {
-    rotatedTitle.classList.add('inial-rotate');
+    // rotatedTitle.classList.add('inial-rotate');
     rotatedTitle2.classList.add('inial-rotate');
     rotatedTitle3.classList.add('inial-rotate');
     rotatedTitle4.classList.add('inial-rotate');
@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
     // ------------------------
 
-    var scroll = window.requestAnimationFrame ||
-        // IE Fallback
-        function (callback) {
-            window.setTimeout(callback, 10000 / 60)
-        };
+    var scroll = window.requestAnimationFrame = window.requestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.msRequestAnimationFrame
+    || function(f){return setTimeout(f, 1000/60)} // simulate calling code 60 
 
     // ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // -----------------------------
 
-    function scrolltextrotate(elemnt, topInPixels) {
+    function scrolltextrotate(elemnt, topInPixels,speed=1) {
         // this funcion is rotating text in seemless motion with scroll 
         const textToRotate = document.querySelector(elemnt);
         var widowHight = document.documentElement.clientHeight; //screen highet
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //  console.log(textToRotate.style.transform)
         if (scrollTop.top > topInPixels) {
             // 1
-            textToRotate.style.transform = `translateX(${250-(1-scrollTop.top / widowHight) *250}px) rotate(${(scrollTop.top /widowHight) *15}deg)`;
+            textToRotate.style.transform = `translateX(${250-(1-scrollTop.top / widowHight) *250}px) rotate(${((scrollTop.top /widowHight)*speed) *8}deg)`;
             // console.log(`translateX(${250-(1-scrollTop.top / widowHight) *250}px)`)
             textToRotate.style.opacity = `${20+(1-scrollTop.top / widowHight) *80}%`;
 
@@ -126,15 +126,15 @@ document.addEventListener('DOMContentLoaded', function () {
         //  console.log(scrollTop.top)
         if (scrollTop.top > topINPixels) {
             // 1
-            textToRotate.style.transform = `translateX(${-250+(1-scrollTop.top / widowHight) *250}px) rotate(${360-((scrollTop.top /widowHight) *15)}deg)`;
+            textToRotate.style.transform = `translateX(${-250+(1-scrollTop.top / widowHight) *250}px) rotate(${360-((scrollTop.top /widowHight) *8)}deg)`;
             // console.log( `rotate(${(scrollTop.top /widowHight) *15}deg)`)
             // textToRotate.style.transform = `translateX(${80+(1-scrollTop.top / widowHight) *20}%)`;
-
+            textToRotate.style.opacity = `${20+(1-scrollTop.top / widowHight) *80}%`;
 
         } else {
             // 1
-            textToRotate.style.transform = `rotate(360deg)`;
-            // textToRotate.style.opacity = `100%`;
+            textToRotate.style.transform = `rotate(360deg) translateX(0)`;
+            textToRotate.style.opacity = `100%`;
 
         }
     }
@@ -149,13 +149,13 @@ document.addEventListener('DOMContentLoaded', function () {
             document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrollTop =
             document.body.scrollTop || document.documentElement.scrollTop;
-        // scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+        scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
         //rotate eye----------------------
         const eyeRotate = document.querySelector('.rotate.eye');
-        // eyeRotate.style.transform = `rotate(${(scrollTop / height) *360}deg)`;
+        eyeRotate.style.transform = `rotate(${(scrollTop / height) *360}deg)`;
         // console.log(`rotate(${(scrollTop / height) *360}deg)`);
         // -----------------------------------------------
-        scrolltextrotate('.section-title', 200);
+        // scrolltextrotate('.section-title', 0,2);
         scrolltextrotate('.widget-contact h2', 200);
         scrolltextrotateReverce('.widget-contact p', 300);
         scrolltextrotate('.wpcf7 input[type="text"]', 400);

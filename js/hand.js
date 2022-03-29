@@ -14,7 +14,7 @@ function greeting() {
     // interval1 = setInterval(salamReset, 3000);
 
     yourHand.addEventListener("click",alSalamAlaikum );
-
+    myHand.addEventListener("click",alSalamAlaikum);
     function alSalamAlaikum() {
         
         // setInterval(function(){window.requestAnimationFrame(salamReset)} ,4000)  

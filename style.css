@@ -485,7 +485,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	/* margin: 0 0 1.5em 3em; */
 }
 
 ul {
@@ -1037,7 +1037,9 @@ body {
 	line-height: 1.5;
 
 }
-
+body *{
+	/* outline: 1px solid red; */
+}
 
 #page {
 	background-color: hsl(212, 77%, 12%);
@@ -1158,19 +1160,23 @@ main {
 	align-items: center;
 	/* height: 80vh; */
 	margin-bottom: 2rem;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	position: relative;
 	align-content: center;
+
 }
 
 .header-info {
-	padding-top: 18rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-
+	padding-top: 10rem;
+	padding-left:2rem;
+	padding-right: 2rem;
+	padding-bottom:5rem ;
+	max-width: 900px;
+	margin: auto;
+	/* flex-wrap: wrap; */
 	/* outline: 2px solid green; */
 	justify-content: center;
-	align-items: baseline;
+	/* align-items: baseline; */
 
 }
 
@@ -1202,18 +1208,20 @@ main {
 	height: fit-content;
 }
 
-.header-info .side-contact {
+ .side-contact {
 	min-height: fit-content;
+	width: 10rem;
+	margin: auto;
 	/* outline:1px solid red ; */
 }
 
-.header-info .side-contact .contact-link {
+ .side-contact .contact-link {
 	display: inline-block;
 	/* margin: 5rem auto; */
 	text-transform: capitalize;
 	color: #FF8C28;
 	line-height: 2;
-	font-size: 1.25rem;
+	/* font-size: 1.25rem; */
 
 	padding: .2rem .75rem;
 	border: 2px solid #d1deea;
@@ -1226,9 +1234,16 @@ main {
 
 	/* outline: 1px solid red; */
 }
-
-.site-description {
+.site-branding .dev-name,
+.section-title,
+.widget-contact h2
+{
+	font-size: calc(20px + (34 - 20) * ((100vw - 300px) / (1600 - 300))) ;
+}
+.site-description,
+.widget-contact p{
 	text-indent: .5rem;
+	font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
 /* .header-info .side-contact:hover .contact-link::after{
@@ -1247,7 +1262,7 @@ main {
 }
 
 /* .wp-block-social-links .wp-block-social-link:hover */
-.header-info .side-contact .contact-link:hover {
+ .side-contact .contact-link:hover {
 	color: #d1deea;
 	/* border-color: #d1deea; */
 }
@@ -1265,12 +1280,13 @@ main {
 	white-space: nowrap;
 	/* transform:translateX(-110vw) skew(54deg, 0deg); */
 	/* transition: all .3s ease-in; */
-	margin: auto;
+	margin:1rem auto;
 	width: fit-content;
 	will-change: transform, opacity;
+	
 }
 .widget-contact{
-	/* line-height: 10; */
+	/* padding-top: 1rem; */
 }
 .inial-rotate {
 	transform:translateX(250px) rotate(15deg);
@@ -1284,13 +1300,14 @@ main {
 /* ---------------welcoming container seciotn---------------------- */
 .wellcom{
 max-width: 700px;
-flex-basis: 100%;
+min-width: 280px;
+flex-basis: 50%;
 position: relative;
-/* outline: 1px solid red; */
 min-height: 8rem;
 text-align: center;
 white-space: nowrap;
-
+margin: 0 .25rem;
+/* outline: 1px solid red; */
 }
 .wellcom img{
 	width: 60px;
@@ -1491,7 +1508,11 @@ white-space: nowrap;
 	transform: translate3d(-50%,0,0);
 	opacity: 0;
 	z-index: 30;
+	text-transform: capitalize;
 	
+}
+.start-shaking{
+ text-transform: capitalize;
 }
 .start-shaking span{
 	display: inline;
@@ -1568,8 +1589,9 @@ white-space: nowrap;
 }
 
 #articles {
-	padding: 1vw 5vw;
+	padding: 4vw 5vw;
 	position: relative;
+	overflow-x: hidden;
 	/* outline: 1px solid red; */
 
 }
@@ -1589,7 +1611,7 @@ white-space: nowrap;
 	background-color: hsl(212, 77%, 12%);
 	border-radius: 3px;
 	box-shadow: inset 2px 2px 50px black;
-	margin: 1rem 0;
+	margin-bottom:2rem ;
 	transition: transform .5s ease-in-out;
 	/* animation: box-little-rotate .3s  cubic-bezier(0.4, 0.86, 0.23, 0.93); */
 	position: relative;
@@ -1607,14 +1629,18 @@ white-space: nowrap;
 }
 
 .home-article-box.box-inview-position {
-	transform: translate3d(0, 0, 0) scale(100%) skew(0deg, 0deg);
+	/* transform: translate3d(0, 0, 0) scale(100%) skew(0deg, 0deg); */
+	animation: box-scrolled .3s ease .2s 1 normal forwards;
 }
 
-.inview-container {
-	/* outline: 1px solid red; */
-
+@keyframes box-scrolled {
+	0%{
+		transform: translate3d(-60%, -30%, 0) scale(30%) skew(66deg, 0deg);
+	}
+	100%{
+		transform: translate3d(0, 0, 0) scale(100%) skew(0deg, 0deg);
+	}
 }
-
 @keyframes box-little-rotate {
 	0% {
 		opacity: 10%;
@@ -1666,7 +1692,10 @@ white-space: nowrap;
 	display: block;
 	margin: .5rem;
 	width: 50%;
+	border-bottom: 1px solid rgba(7, 29, 54, 0.8);
+		transition: border-width .1s ease-in-out;
 	/* outline: 1px solid red; */
+	width:100%;
 }
 
 .main-navigation.toggled ul.primary-menu li a {
@@ -1674,13 +1703,13 @@ white-space: nowrap;
 	padding: 1rem;
 	text-transform: capitalize;
 	border-left: 2px solid rgba(7, 29, 54, 0.8);
-	border-bottom: 1px solid rgba(7, 29, 54, 0.8);
+	
 	font-weight: bold;
 	color: hsl(212, 77%, 12%);
-	transition: border-width .1s ease-in-out;
+
 }
 
-.main-navigation.toggled ul.primary-menu li a:hover {
+.main-navigation.toggled ul.primary-menu li:hover {
 	border-left-width: 3px;
 	border-bottom-width: 2px;
 	font-weight: bolder;
@@ -1723,7 +1752,9 @@ button.menu-toggle .dashicons-menu-alt:before {
 }
 
 .page-rotate {
-	transform: translateX(5%) rotate(10deg);
+
+	/* transform-origin:bottom left; */
+	transform: translateX(-30vw) rotate(10deg);
 }
 
 .main-navigation.toggled button.menu-toggle .dashicons-menu-alt,
@@ -1737,12 +1768,17 @@ button.menu-toggle .dashicons-menu-alt:before {
 
 	.page-rotate {
 		transform-origin: 60% 40%;
-		transform: translateX(5%) translateY(2%) rotate(5deg);
+		transform: translateX(5%) translateY(1.75%) rotate(5deg);
+		/* outline: 1px solid red; */
 	}
 }
 
-@media screen and (max-width: 34.5em) {
-
+@media screen and (max-width:47.5rem) {
+	.page-rotate {
+		transform-origin: 60% 40%;
+		transform: translateX(5%) translateY(1%) rotate(5deg);
+		/* outline: 1px solid red; */
+	}
 	.header-info {
 		flex-wrap: wrap;
 	}
@@ -1753,10 +1789,10 @@ section.contact-me {
 	text-align: center;
 	/* max-width: 500px; */
 	margin: auto;
-	padding: 0 .5rem;
+	padding:3rem  .5rem 0;
 	overflow-x: hidden;
 	overflow-y: visible;/*not working??*/
-	outline: 1px solid red;
+	/* outline: 1px solid red; */
 }
 
 #respond input,
@@ -1956,11 +1992,16 @@ input:-webkit-autofill {
 }
 /* ------------ skills section----------------------- */
 section.my-skills{
-	padding: 2rem 0 4rem;
+	padding:0 2rem;
+}
+.skill-title{
+	
+	padding-top: .25rem;
 }
 .my-skills .skill-borgress-circles{
-	padding: 2rem 0;
+	/* margin: 2rem; */
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: 3rem;
 	align-items: center;
