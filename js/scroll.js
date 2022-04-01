@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // -------------------function calls------------------------------
 
     onScroolMove('.inview-container', '.home-article-box', 'box-inview-position', 'no-opacity', 400, 2); //   onScroolMove(elemntInveiw,targetedElemnt, animationClass,removableClass, topAndBottom, windowHighetRate)
+    // onScroolMove('.more-link', '.more-link', 'hide', 'noh', 400, 2); //   onScroolMove(elemntInveiw,targetedElemnt, animationClass,removableClass, topAndBottom, windowHighetRate)
     // onScroolMove('#articles', '.section-title', 'title-slide-in', 'noh', 500, 2); //   onScroolMove(elemntInveiw,targetedElemnt, animationClass,removableClass, topAndBottom, windowHighetRate)
 
     // ---------------------scroll progress bar----------------------------

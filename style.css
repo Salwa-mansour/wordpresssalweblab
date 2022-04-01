@@ -1035,11 +1035,12 @@ body {
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.5;
-
+	background-color: #d1deea;
 }
-body *{
-	/* outline: 1px solid red; */
-}
+html {
+	/* scroll-behavior: smooth; */
+	
+  }
 
 #page {
 	background-color: hsl(212, 77%, 12%);
@@ -1165,7 +1166,13 @@ main {
 	align-content: center;
 
 }
+.site-header.no-flex{
+	overflow:auto;
+}
 
+.site-icon{
+	margin-left: 1rem;
+}
 .header-info {
 	padding-top: 10rem;
 	padding-left:2rem;
@@ -1214,7 +1221,15 @@ main {
 	margin: auto;
 	/* outline:1px solid red ; */
 }
-
+.work{
+	padding-top: 5rem;
+	
+}
+.site-main.work{
+	width: 90%;
+	max-width: 800px;
+	margin: auto;
+}
  .side-contact .contact-link {
 	display: inline-block;
 	/* margin: 5rem auto; */
@@ -1331,7 +1346,7 @@ margin: 0 .25rem;
 	right: 0;
 	top: 0;
 	transform: rotate(10deg);
-
+	cursor: pointer;
 }
 .your-hand.salam-animation{
 	animation: your-hand-move .4s ease-in-out .1s 1 normal forwards;
@@ -1509,10 +1524,12 @@ margin: 0 .25rem;
 	opacity: 0;
 	z-index: 30;
 	text-transform: capitalize;
-	
+	/* user-select: none; */
+
 }
 .start-shaking{
  text-transform: capitalize;
+ user-select: none;
 }
 .start-shaking span{
 	display: inline;
@@ -1664,7 +1681,99 @@ margin: 0 .25rem;
 
 
 }
+/*  article box title*/
+.home-article-box .entry-header{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate3d(-50%,0,0);
+	/* outline: 1px solid red; */
+	width: 100%;
+	height: 3.5rem;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.home-article-box .entry-header a{
+	/* display: block;
+	width: 100%; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	/* outline: 1px solid orange; */
+}
+.home-article-box:hover  .entry-header a{
+	animation: wiggle2 2s linear ;
+}
+.home-article-box .view-text {
+	/* outline: 1px solid green; */
+	display: inline-block;
+	color: white;
 
+	height: 100%;
+	line-height: 2;
+	text-transform: capitalize;
+}
+.more-link{
+	width: 80%;
+	max-width: 600px;
+	display: block;
+	padding: .5rem;
+	background-color: rgba(0, 0, 0, 0.2);
+	text-align: center;
+	line-height: 2;
+	text-transform: capitalize;
+	color: white;
+	margin: auto;
+	overflow: hidden;
+	box-shadow: inset 2px 2px 50px rgba(0, 0, 0, 0.5);
+}
+.more-link div{
+	/* outline: 1px solid red; */
+	position: relative;
+	width: fit-content;
+	left: 50%;
+	transition: left ease-in-out;
+	transform: translate3d(-50%,0,0);
+	/* -moz-animation: marquee 10s linear infinite;
+        -webkit-animation: marquee 10s linear infinite; */
+        /* animation: marquee 8s linear infinite; */
+}
+.more-link.hide{
+	display: none;
+}
+.more-link:hover div{
+	animation: unset;
+}
+@-moz-keyframes marquee {
+	0% {
+	  transform: translateX(100%);
+	}
+	100% {
+	  transform: translateX(-100%);
+	}
+  }
+  @-webkit-keyframes marquee {
+	0% {
+	  transform: translateX(100%);
+	}
+	100% {
+	  transform: translateX(-100%);
+	}
+  }
+  @keyframes marquee {
+	0% {
+	  /* -moz-transform: translateX(100%);
+	  -webkit-transform: translateX(100%);
+	  transform: translateX(100%) */
+	  left: -20%;
+	}
+	100% {
+	  -moz-transform: translateX(-100%);
+	  -webkit-transform: translateX(-100%);
+	  transform: translateX(-100%);
+	  left: 120%;
+	}
+  }
 /* scroll progress bar------ */
 #scroll-progress {
 	position: absolute;
@@ -1680,10 +1789,10 @@ margin: 0 .25rem;
 	padding-top: 5rem;
 	position: absolute;
 
-	background-color: #d1deea;
+	background-color: transparent;
 	top: 0;
 	left: 0;
-	width: 100vw;
+	width: 90%;
 	height: 100vh;
 	z-index: 0;
 }
@@ -1719,7 +1828,7 @@ margin: 0 .25rem;
 	background-color: transparent;
 	outline: none;
 	border: none;
-
+	margin-top: 1.5rem;
 	color: #FF8C28;
 	position: fixed;
 	top: 0;
@@ -1742,7 +1851,7 @@ button.menu-toggle .dashicons-menu-alt:before {
 	left: 0;
 }
 
-/* html, */
+html,
 .scroll-disapple {
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -1763,7 +1872,12 @@ button.menu-toggle .dashicons-menu-alt:before {
 	font-family: 'Dashicons';
 
 }
+.main-navigation button.menu-toggle .dashicons-menu-alt,
+.main-navigation button.menu-toggle .dashicons-menu-alt:before {
+	content: "\f228";
+	font-family: 'Dashicons';
 
+}
 @media screen and (min-width: 34.5em) {
 
 	.page-rotate {
@@ -1896,6 +2010,38 @@ section.contact-me {
 	40%,
 	100% {
 		transform: rotateZ(0);
+	}
+}
+@keyframes wiggle2{
+
+	0%,
+	7% {
+		transform:translate3d(-50%,-50%,0) rotateZ(0);
+	}
+
+	15% {
+		transform:translate3d(-50%,-50%,0) rotateZ(-15deg);
+	}
+
+	20% {
+		transform:translate3d(-50%,-50%,0) rotateZ(10deg);
+	}
+
+	25% {
+		transform:translate3d(-50%,-50%,0) rotateZ(-10deg);
+	}
+
+	30% {
+		transform:translate3d(-50%,-50%,0) rotateZ(6deg);
+	}
+
+	35% {
+		transform:translate3d(-50%,-50%,0) rotateZ(-4deg);
+	}
+
+	40%,
+	100% {
+		transform:translate3d(-50%,-50%,0) rotateZ(0);
 	}
 }
 
@@ -2143,3 +2289,63 @@ background-image: conic-gradient(#FF8C28 172deg,rgba(0,0,0,0.1) 137deg);
 		background-image: conic-gradient(#FF8C28 180deg,rgba(0,0,0,0.1) 137deg);
 	}
 }
+/* ------preloader stylings---------- */
+.preloader{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 3000;
+	background-color: hsl(212, 77%, 12%);
+	outline: 1px solid red;
+}
+.preloader-inner{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	width: fit-content;
+	transform: translate3d(-50%,0,0);
+	color: white;
+	text-transform: capitalize;
+	text-align: center;
+
+}
+.preloader-caoMoji{
+	opacity: 100%;
+}
+.preloader-caoMoji.show{
+	animation: show-kao .2s ease 0  1 normal forwards;
+}
+@keyframes show-kao {
+	0%,100%{
+		opacity: 10%;
+	}
+	50%{
+		opacity: 100%;
+	}
+}
+.loader-dot{
+	display: inline-block;
+	background-color: white;
+	height: 3px;
+	width: 3px;
+	border-radius: 50%;
+	margin: 0 3px;
+	/* line-height: 0; */
+
+}
+.loader-dot:nth-child(1) {
+	animation: preloader .6s ease-in-out alternate infinite;
+  }
+  .loader-dot:nth-child(2) {
+	animation: preloader .6s ease-in-out alternate .2s infinite;
+  }
+  
+  .loader-dot:nth-child(3) {
+	animation: preloader .6s ease-in-out alternate .4s infinite;
+  }
+  
+  @keyframes preloader {
+	100% { transform: scale(2); }
+  }

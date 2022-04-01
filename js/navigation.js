@@ -45,7 +45,7 @@
 			button.setAttribute( 'aria-expanded', 'true' );
 		}
 	} );
-
+	
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
@@ -110,7 +110,7 @@
 	  const page = document.querySelector('.site');
 	  const toggleBtn = document.querySelector('.menu-toggle');
 	  const mainMenu = document.querySelector('.main-navigation');
-  
+	  const   mainMenuItmes = document.querySelectorAll('.main-navigation .menu-item a');
 	  function menuRotate() {
 		  if (mainMenu.classList.contains('toggled')) {
 			  page.classList.add('page-rotate');
@@ -123,6 +123,19 @@
 		  }
 	  }
 	  toggleBtn.addEventListener('click', menuRotate);
+	  mainMenuItmes.forEach((menuItem)=>{
+		menuItem.addEventListener("click",()=>{
+			// page.classList.remove('page-rotate');
+			//   htmlPage.classList.remove('scroll-disapple');
+			//   toggleBtn.classList.remove('visible-menu');
+			// console.log('tem ')
+			page.classList.remove('page-rotate');
+			htmlPage.classList.remove('scroll-disapple');
+			toggleBtn.classList.remove('visible-menu');
+			siteNavigation.classList.remove( 'toggled' );
+			button.setAttribute( 'aria-expanded', 'false' );
+		})
+	  })
 	  //   page.addEventListener('click',menuRotate);
 	// /////////////////////////////////
 }() );

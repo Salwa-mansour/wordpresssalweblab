@@ -17,7 +17,7 @@
 				<header class="entry-header">
 
 					<a href="<?php  esc_url( get_permalink() ); ?>">
-						<span><?php esc_html_e('veiw project','salwaweblab' ); ?></span>
+						<span class=" view-text"><?php esc_html_e('veiw project','salwaweblab' ); ?></span>
 					</a>
 				</header><!-- .entry-header -->
 

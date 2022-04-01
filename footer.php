@@ -15,11 +15,12 @@
 		 <div class="site-info">
 			
 				<div class="copy-rights">
+					<p class="copy-write">
 					<?php
-						/* translators: 1: Theme name, 2: Theme author. */
-						printf( esc_html__( 'Theme: %1$s by %2$s.', 'salwaweblab' ), 'salwaweblab', '<a href="https://github.com/Salwa-mansour">salwa</a>' );
+				
+	 esc_html_e( 'copy writes resvied for salwa '. comicpress_copyright(), 'salwaweblab' ) 
 						?>
-			
+			</p><!--copy-write-->
 				</div>
 				
 				<?php dynamic_sidebar( 'social-widget' ); ?>

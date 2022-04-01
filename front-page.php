@@ -12,7 +12,7 @@
  * @package Salwaweblab
  */
 
-get_header();
+get_header('front');
 ?>
 
 <main id="primary" class="site-main">
@@ -54,11 +54,16 @@ get_header();
 		?>
 		</div>
 		<!--inner-flex-->
-
+<!--#articles-->
+	<!-- <a href="#" class="more-link">
+		<div>
+				more progects
+		</div>
+	
+	</a> -->
 	</section>
-	<!--#articles-->
-	<!-- <a href="#">read more</a> -->
-	<section class="my-skills">
+	
+	<section class="my-skills" id="my-skills">
 		<h2 class="section-title">my skills ヽ(o^ ^o)ﾉ</h2>
 		<div class="skill-borgress-circles">
 				<div class="skill ">
@@ -98,7 +103,7 @@ get_header();
 			
 		</div><!-- skill-borgress-circles-->
 	</section>
-	<section class="contact-me">
+	<section class="contact-me" id="contact-me">
 		<?php dynamic_sidebar( 'contact1-widget' ); ?>
 	</section>
 	

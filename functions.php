@@ -168,6 +168,7 @@ function salwaweblab_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'salwaweblab-scroll', get_template_directory_uri() . '/js/scroll.js', 'jQuery', _S_VERSION, true );
 	wp_enqueue_script( 'salwaweblab-hand-move', get_template_directory_uri() . '/js/hand.js', 'jQuery', _S_VERSION, true );
+	wp_enqueue_script( 'salwaweblab-preloader', get_template_directory_uri() . '/js/prelaoder.js', 'jQuery', _S_VERSION, true );
 	wp_enqueue_script( 'salwaweblab-send-form-ajax', get_template_directory_uri() . '/js/ajax-form.js', 'jQuery', _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -269,3 +270,25 @@ function massege_sending(){
 
  add_action( 'wp_ajax_contactform_action', 'massege_sending' );
 add_action( 'wp_ajax_nopriv_contactform_action', 'massege_sending' );
+function comicpress_copyright() {
+	// https://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
+	global $wpdb;
+	$copyright_dates = $wpdb->get_results("
+	SELECT
+	YEAR(min(post_date_gmt)) AS firstdate,
+	YEAR(max(post_date_gmt)) AS lastdate
+	FROM
+	$wpdb->posts
+	WHERE
+	post_status = 'publish'
+	");
+	$output = '';
+	if($copyright_dates) {
+	$copyright = "&copy; " . $copyright_dates[0]->firstdate;
+	if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
+	$copyright .= '-' . $copyright_dates[0]->lastdate;
+	}
+	$output = $copyright;
+	}
+	return $output;
+	}
