@@ -20,7 +20,9 @@ function greeting() {
         // setInterval(function(){window.requestAnimationFrame(salamReset)} ,4000)  
         isMoving = 1;
         clickcount++;
-      
+        if(clickcount >3){
+            clickcount =0;
+       }
         yourHand.classList.remove('salam-animation-reset')
         yourHand.classList.add('salam-animation');
         myHand.classList.remove('salam-animation-reset');
@@ -35,15 +37,16 @@ function greeting() {
          
         } 
         salamAnimationInerval = setInterval(salamReset ,3000) ;
-
+        console.log(clickcount)
         if(clickcount === 1){
             salamText.innerHTML ="nice to meet you (*^^*);";
         }else if(clickcount === 2){
             salamText.innerHTML = "whatsup friend (o^▽^o);";
-        }else if(clickcount === 3){
+        }else if(clickcount >= 3){
             salamText.innerHTML ='wanna talk more!  (✯◡✯);<a href="#contact-me" class="">click here </a>';
-             clickcount =0;
+            
         }
+       
         // if(clickcount === 3){
         //        salamText.addEventListener("mouseover",()=>{
         //         console.log('hoverd')

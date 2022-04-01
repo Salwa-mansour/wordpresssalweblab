@@ -1828,7 +1828,7 @@ margin: 0 .25rem;
 	background-color: transparent;
 	outline: none;
 	border: none;
-	margin-top: 1.5rem;
+
 	color: #FF8C28;
 	position: fixed;
 	top: 0;
@@ -1851,7 +1851,7 @@ button.menu-toggle .dashicons-menu-alt:before {
 	left: 0;
 }
 
-html,
+/* html, */
 .scroll-disapple {
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -1860,12 +1860,15 @@ html,
 
 }
 
-.page-rotate {
+.page-rotate
+ {
 
 	/* transform-origin:bottom left; */
 	transform: translateX(-30vw) rotate(10deg);
 }
-
+.single-work.page-rotate{
+	transform: translateX(22vw) translateY(7%) rotate(10deg);
+}
 .main-navigation.toggled button.menu-toggle .dashicons-menu-alt,
 .main-navigation.toggled button.menu-toggle .dashicons-menu-alt:before {
 	content: "\f335";
@@ -1880,18 +1883,24 @@ html,
 }
 @media screen and (min-width: 34.5em) {
 
-	.page-rotate {
-		transform-origin: 60% 40%;
+	.page-rotate{
+		/* transform-origin: 60% 40%; */
 		transform: translateX(5%) translateY(1.75%) rotate(5deg);
 		/* outline: 1px solid red; */
+	}
+	.single-work.page-rotate{
+		transform: translateX(22vw) translateY(7%) rotate(10deg);
 	}
 }
 
 @media screen and (max-width:47.5rem) {
-	.page-rotate {
-		transform-origin: 60% 40%;
+	.page-rotate{
+		/* transform-origin: 60% 40%; */
 		transform: translateX(5%) translateY(1%) rotate(5deg);
 		/* outline: 1px solid red; */
+	}
+	.single-work.page-rotate{
+		transform: translateX(22vw) translateY(7%) rotate(10deg);
 	}
 	.header-info {
 		flex-wrap: wrap;
@@ -1953,7 +1962,9 @@ section.contact-me {
 	margin: auto;
 	padding: 0 .5rem;
 }
-
+.wpcf7 p{
+	text-align: center;
+}
 .wpcf7-textarea,
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"] {
@@ -2348,4 +2359,13 @@ background-image: conic-gradient(#FF8C28 172deg,rgba(0,0,0,0.1) 137deg);
   
   @keyframes preloader {
 	100% { transform: scale(2); }
+  }
+  /* --------- */
+  article .wp-social-link-github a::after{
+	  content: "github";
+	
+  }
+  /* -------------404-------------- */
+  .not-found{
+	  padding-top: 10rem;
   }

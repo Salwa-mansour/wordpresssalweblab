@@ -32,7 +32,9 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+	<section class="contact-me" id="contact-me">
+		<?php dynamic_sidebar( 'contact1-widget' ); ?>
+	</section>
 	</main><!-- #main -->
 
 <?php

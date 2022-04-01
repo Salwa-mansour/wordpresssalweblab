@@ -50,11 +50,11 @@
 						<li class="menu-item"><a href="<?php echo esc_url(home_url());esc_html_e('#top-back'); ?>"> about me</a></li>
 						<li class="menu-item"><a href="<?php echo esc_url(home_url());esc_html_e('#articles'); ?>"> my work</a></li>
 						<li class="menu-item"><a href="<?php echo esc_url(home_url());esc_html_e('#my-skills'); ?>"> my skills</a></li>
-						<li class="menu-item"><a href="<?php echo esc_url(home_url());esc_html_e('#contact-me'); ?>"> contacat me</a></li>
+						<li class="menu-item"><a href="<?php esc_html_e(get_permalink( get_the_ID()));esc_html_e('#contact-me'); ?>"> contacat me</a></li>
 
 					</ul>
 	</nav><!-- #site-navigation -->
-	<div id="page" class="site">
+	<div id="page" class="site <?php if(is_single()){echo('single-work');} ?>">
 		<!-- <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'salwaweblab' ); ?></a> -->
 
 		<header id="masthead" class="site-header <?php if(!is_front_page()){echo('no-flex');} ?> ">
